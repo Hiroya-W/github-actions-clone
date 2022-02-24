@@ -10,6 +10,10 @@ jobs:
     runs-on: "ubuntu-20.04"
     steps:
       - uses: actions/checkout@v2
+      
+      - name: echo GITHUB_REPOSITORY
+        run: echo ${GITHUB_REPOSITORY}
+        
       - name: clone (pull_request)
         if: ${{ github.event_name == 'pull_request' }}
         run: |
@@ -25,6 +29,3 @@ jobs:
 
       - name: show list
         run: ls -a
-
-      - name: echo GITHUB_REPOSITORY
-        run: echo ${GITHUB_REPOSITORY}
