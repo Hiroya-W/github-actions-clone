@@ -25,3 +25,6 @@ jobs:
 
       - name: show list
         run: ls -a
+
+      - name: cat GITHUB_REPOSITORY
+        run: cat ${GITHUB_REPOSITORY}
